@@ -93,7 +93,6 @@ const FAutoCompletObj = (props) => {
   
   // This should notify caller with the changed value
   const onChange = (evt, value) => {
-    // const value = evt.target.value
     props.notifyParent(props.name, { [props.name]: value })
   }
 

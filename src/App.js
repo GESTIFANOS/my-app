@@ -28,6 +28,7 @@ class App extends Component {
             name='carrier'
 
             value={this.state.data.carrier && this.state.data.carrier.id}
+            value={1}
             label='Authority'
             data={[{id: 1, name: 'one'}, {id: 2, name: 'two'}]}
             valueRef='name'
