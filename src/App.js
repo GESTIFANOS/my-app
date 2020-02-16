@@ -24,7 +24,7 @@ class App extends Component {
         url='https://country.register.gov.uk/records.json?page-size=5000'
         notifyParent={this.notifyParent}/>
 
-          <FSelect
+          <FAutoComplete
             name='carrier'
 
             value={this.state.data.carrier && this.state.data.carrier.id}

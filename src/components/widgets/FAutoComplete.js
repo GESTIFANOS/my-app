@@ -38,12 +38,20 @@ const FAutoCompletObj = (props) => {
   const fetchOptions = async (filterValue) => {
       filterValue = filterValue || ''
       // const response = await GET(props.url + `?${props.queryName}=${filterValue}`)
-      const response = await GET(props.url)
-
-      const options = response.data || []
-      if (!!options) {
-        setOptions(Object.keys(options).map(key => options[key].item[0]));
+      let response;
+      if(props.data){
+        response = {data:''};
+        const options = props.data
+             setOptions(options);
+      }else{
+        response = await GET(props.url)
+        const options = response.data || []
+        if (!!options) {
+          setOptions(Object.keys(options).map(key => options[key].item[0]));
+        }
       }
+
+      
   }
 
   React.useEffect(() => {
@@ -114,7 +122,7 @@ const FAutoCompletObj = (props) => {
                 fullWidth
                 onChange={evt => {
                   setFilter(evt.target.value)
-              }}
+              } }
                 InputProps={{
                   ...params.InputProps,
                   endAdornment: (
