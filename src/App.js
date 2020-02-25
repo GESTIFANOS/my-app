@@ -20,18 +20,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FAutoComplete name='customer' 
-        url='https://country.register.gov.uk/records.json?page-size=5000'
-        notifyParent={this.notifyParent}/>
-
-          <FAutoComplete
+         <FAutoComplete
             name='carrier'
 
             value={this.state.data.carrier && this.state.data.carrier.id}
-            value={1}
             label='Authority'
             data={[{id: 1, name: 'one'}, {id: 2, name: 'two'}]}
             valueRef='name'
+            defaultValue={{id: 1, name: 'one'}}
             keyRef='id'
             notifyParent={this.notifyParent}
             />
